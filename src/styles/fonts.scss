@@ -1,10 +1,27 @@
-// Use this file for adding font-face or remove it
-// Example:
-// @font-face {
-//   font-family: 'Gotham';
-//   src: url('/fonts/gotham-book.eot') format('eot'), url('/fonts/gotham-book.woff') format('woff'),
-//     url('/fonts/gotham-book.ttf') format('truetype');
-//   font-weight: normal;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/gotham-book.eot') format('eot'), url('/fonts/gotham-book.woff') format('woff'),
+    url('/fonts/gotham-book.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/gotham-bold.eot') format('eot'), url('/fonts/gotham-bold.woff') format('woff'),
+    url('/fonts/gotham-bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display-black.eot') format('eot'),
+    url('/fonts/playfair-display-black.woff') format('woff'),
+    url('/fonts/playfair-display-black.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
