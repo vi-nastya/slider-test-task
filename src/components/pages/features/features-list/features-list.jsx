@@ -50,6 +50,14 @@ const features = [
 const FeaturesList = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
+  // Pre-fetch all images
+  React.useEffect(() => {
+    features.forEach((feature) => {
+      const img = new Image();
+      img.src = feature.image;
+    });
+  }, []);
+
   return (
     <div className={cx('section')}>
       <div className={cx('wrapper')}>
