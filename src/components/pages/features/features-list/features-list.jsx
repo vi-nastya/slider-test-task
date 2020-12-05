@@ -56,9 +56,9 @@ const FeaturesList = () => {
         <div className={cx('buttons-container')}>
           {features.map((feature, index) => (
             <FeatureButton
+              key={`button-${index}`}
               title={feature.title}
               icon={feature.icon}
-              key={`button-${index}`}
               id={index}
               isActive={activeIndex === index}
               onClick={() => setActiveIndex(index)}
@@ -72,7 +72,7 @@ const FeaturesList = () => {
               key={`feature-${index}`}
               feature={feature}
               isShowing={index === activeIndex}
-              dotsAtBottom={index % 2 === 1}
+              dotsBgPosition={index % 2 === 0 ? 'top' : 'bottom'}
             />
           ))}
         </div>

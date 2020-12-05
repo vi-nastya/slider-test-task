@@ -8,9 +8,10 @@ const cx = classNames.bind(styles);
 const CIRCLE_RADIUS = 36;
 
 const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, onClick }) => {
-  const raf = React.useMemo(
+  // Keep JS-driven animation outside of React for better performance
+  const spinner = React.useMemo(
     () => ({
-      handle: -1,
+      rafHandle: -1,
       hasStopped: false,
       progress: 0,
       lastAnimated: performance.now(),
@@ -32,8 +33,8 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
         this.hasStopped = true;
         this.progress = 100;
         this.render();
-        if (this.handle > 0) {
-          cancelAnimationFrame(this.handle);
+        if (this.rafHandle > 0) {
+          cancelAnimationFrame(this.rafHandle);
         }
       },
       loop() {
@@ -65,9 +66,9 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
 
   React.useEffect(() => {
     if (isActive) {
-      raf.start();
+      spinner.start();
     } else {
-      raf.stop();
+      spinner.stop();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive]);

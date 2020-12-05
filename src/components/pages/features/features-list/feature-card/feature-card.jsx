@@ -6,19 +6,25 @@ import styles from './feature-card.module.scss';
 
 const cx = classNames.bind(styles);
 
-const FeatureCard = ({ feature, isShowing, dotsAtBottom }) => {
-  const [shouldRender, setRender] = React.useState(isShowing);
+const FeatureCard = ({ feature, isShowing, dotsBgPosition }) => {
+  const [isRendering, setIsRendering] = React.useState(isShowing);
 
   React.useEffect(() => {
-    if (isShowing) setRender(true);
+    if (isShowing) {
+      setIsRendering(true);
+    }
   }, [isShowing]);
 
   const onAnimationEnd = () => {
-    if (!isShowing) setRender(false);
+    if (!isShowing) {
+      setIsRendering(false);
+    }
   };
 
+  console.log('dots', feature.title, dotsBgPosition);
+
   return (
-    shouldRender && (
+    isRendering && (
       <div
         className={cx('feature-card')}
         style={{ animation: `${isShowing ? styles.fadeIn : styles.fadeOut} 600ms` }}
@@ -26,7 +32,12 @@ const FeatureCard = ({ feature, isShowing, dotsAtBottom }) => {
       >
         <h2 className={cx('title')}>{feature.title}</h2>
         <p className={cx('description')}>{feature.description}</p>
-        <div className={cx('image-wrapper', { 'image-wrapper--dots-bottom': dotsAtBottom })}>
+        <div
+          className={cx('image-wrapper', {
+            'image-wrapper--dots-bottom': dotsBgPosition === 'bottom',
+            'image-wrapper--dots-top': dotsBgPosition === 'top',
+          })}
+        >
           <img src={feature.image} alt={feature.title} />
         </div>
       </div>
@@ -41,7 +52,7 @@ FeatureCard.propTypes = {
     image: PropTypes.string,
   }).isRequired,
   isShowing: PropTypes.bool.isRequired,
-  dotsAtBottom: PropTypes.bool.isRequired,
+  dotsBgPosition: PropTypes.oneOf(['bottom', 'top']).isRequired,
 };
 
 export default FeatureCard;

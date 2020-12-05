@@ -64,8 +64,6 @@
 
   &::before {
     position: absolute;
-    top: -28px;
-    right: -58px;
     z-index: 1;
     width: 145px;
     height: 145px;
@@ -74,9 +72,12 @@
     background-size: cover;
   }
 
+  &--dots-top::before {
+    top: -28px;
+    right: -58px;
+  }
+
   &--dots-bottom::before {
-    top: auto;
-    right: auto;
     bottom: -25px;
     left: -48px;
   }
