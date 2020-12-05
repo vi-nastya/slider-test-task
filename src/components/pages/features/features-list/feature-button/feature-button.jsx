@@ -77,7 +77,7 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
   }, [isActive]);
 
   return (
-    <div className={cx('feature-button')} onClick={onClick}>
+    <button className={cx('feature-button')} type="button" onClick={onClick}>
       <span className={cx('button-title')}>{title}</span>
       <div className={cx('button-icon', { 'button-icon--active': isActive })}>
         <svg
@@ -98,7 +98,7 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
         </svg>
         <Icon />
       </div>
-    </div>
+    </button>
   );
 };
 
