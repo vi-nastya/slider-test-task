@@ -1,6 +1,8 @@
 @font-face {
   font-family: 'Gotham';
-  src: url('/fonts/gotham-book.eot') format('eot'), url('/fonts/gotham-book.woff') format('woff'),
+  src:
+    url('/fonts/gotham-book.eot') format('eot'),
+    url('/fonts/gotham-book.woff') format('woff'),
     url('/fonts/gotham-book.ttf') format('truetype');
   font-style: normal;
   font-weight: 400;
@@ -9,7 +11,9 @@
 
 @font-face {
   font-family: 'Gotham';
-  src: url('/fonts/gotham-bold.eot') format('eot'), url('/fonts/gotham-bold.woff') format('woff'),
+  src:
+    url('/fonts/gotham-bold.eot') format('eot'),
+    url('/fonts/gotham-bold.woff') format('woff'),
     url('/fonts/gotham-bold.ttf') format('truetype');
   font-style: normal;
   font-weight: 700;
@@ -18,7 +22,8 @@
 
 @font-face {
   font-family: 'Playfair Display';
-  src: url('/fonts/playfair-display-black.eot') format('eot'),
+  src:
+    url('/fonts/playfair-display-black.eot') format('eot'),
     url('/fonts/playfair-display-black.woff') format('woff'),
     url('/fonts/playfair-display-black.ttf') format('truetype');
   font-style: normal;
