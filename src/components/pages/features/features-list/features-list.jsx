@@ -59,6 +59,7 @@ const FeaturesList = () => {
               key={`feature-${index}`}
               feature={feature}
               isShowing={index === activeIndex}
+              dotsAtBottom={index % 2 === 1}
             />
           ))}
         </div>

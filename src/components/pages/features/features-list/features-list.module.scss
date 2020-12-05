@@ -9,7 +9,7 @@
   padding: 90px 0 180px 0;
   margin: 0 auto;
   background:
-    url('images/pages/features/background/shape-left.svg') no-repeat left 60px,
+    url('images/pages/features/background/shape-left.svg') no-repeat 40px 60px,
     url('images/pages/features/background/shape-right.svg') no-repeat right 60px;
 }
 
@@ -18,6 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 480px;
-  margin-left: 215px;
+  width: calc(480px + 270px);
+  padding: 0 270px 0 0;
+  margin-left: 218px;
 }

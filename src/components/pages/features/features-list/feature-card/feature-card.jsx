@@ -6,7 +6,7 @@ import styles from './feature-card.module.scss';
 
 const cx = classNames.bind(styles);
 
-const FeatureCard = ({ feature, isShowing }) => {
+const FeatureCard = ({ feature, isShowing, dotsAtBottom }) => {
   const [shouldRender, setRender] = React.useState(isShowing);
 
   React.useEffect(() => {
@@ -26,7 +26,7 @@ const FeatureCard = ({ feature, isShowing }) => {
       >
         <h2 className={cx('title')}>{feature.title}</h2>
         <p className={cx('description')}>{feature.description}</p>
-        <div className={cx('imageWrapper')}>
+        <div className={cx('image-wrapper', { 'image-wrapper--dots-bottom': dotsAtBottom })}>
           <img src={feature.image} alt={feature.title} />
         </div>
       </div>
@@ -41,6 +41,7 @@ FeatureCard.propTypes = {
     image: PropTypes.string,
   }).isRequired,
   isShowing: PropTypes.bool.isRequired,
+  dotsAtBottom: PropTypes.bool.isRequired,
 };
 
 export default FeatureCard;
