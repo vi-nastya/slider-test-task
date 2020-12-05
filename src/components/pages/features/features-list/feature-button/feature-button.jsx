@@ -1,3 +1,4 @@
+/* eslint-disable react/no-this-in-sfc */
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -5,7 +6,9 @@ import React from 'react';
 import styles from './feature-button.module.scss';
 
 const cx = classNames.bind(styles);
+
 const CIRCLE_RADIUS = 36;
+const ANIMATION_DURATION_MS = 4 * 1000;
 
 const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, onClick }) => {
   // Keep JS-driven animation outside of React for better performance
@@ -14,7 +17,7 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
       rafHandle: -1,
       hasStopped: false,
       progress: 0,
-      lastAnimated: performance.now(),
+      startedAt: null,
       render() {
         const circle = document.getElementById(`circle-${id}`);
         if (!circle) {
@@ -27,6 +30,9 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
       },
       start() {
         this.hasStopped = false;
+        this.progress = 0;
+        this.startedAt = performance.now();
+        this.render();
         requestAnimationFrame(this.loop.bind(this));
       },
       stop() {
@@ -42,20 +48,17 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
           return;
         }
 
-        const now = performance.now();
+        const elapsedMs = performance.now() - this.startedAt;
 
-        if (now - this.lastAnimated > 1000 / 60) {
-          this.progress = (this.progress + 1) % 100;
+        this.progress = Math.min(100, (elapsedMs / ANIMATION_DURATION_MS) * 100);
 
-          if (this.progress === 0) {
-            onProgressComplete();
-            this.hasStopped = true;
-            return;
-          }
-
-          this.render();
-          this.lastAnimated = now;
+        if (this.progress >= 100) {
+          onProgressComplete();
+          this.hasStopped = true;
+          return;
         }
+
+        this.render();
 
         this.rafHandle = requestAnimationFrame(this.loop.bind(this));
       },

@@ -21,8 +21,6 @@ const FeatureCard = ({ feature, isShowing, dotsBgPosition }) => {
     }
   };
 
-  console.log('dots', feature.title, dotsBgPosition);
-
   return (
     isRendering && (
       <div
