@@ -1,0 +1,23 @@
+.section {
+  width: 100%;
+  background: $color-primary;
+}
+
+.wrapper {
+  display: flex;
+  max-width: 1520px;
+  padding: 90px 0 180px 0;
+  margin: 0 auto;
+  background:
+    url('images/pages/features/background/shape-left.svg') no-repeat left 60px,
+    url('images/pages/features/background/shape-right.svg') no-repeat right 60px;
+}
+
+.cards-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 480px;
+  margin-left: 215px;
+}

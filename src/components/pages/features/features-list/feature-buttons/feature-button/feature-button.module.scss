@@ -1,0 +1,57 @@
+.feature-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 36px;
+  cursor: pointer;
+}
+
+.button-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  overflow: visible;
+  color: $color-secondary;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 50%;
+
+  & svg {
+    fill: currentColor;
+  }
+
+  &--active {
+    color: $color-accent-primary;
+    background-color: $color-secondary;
+  }
+}
+
+.progress-ring {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  transform: rotate(-90deg);
+}
+
+.progress-ring--circle {
+  stroke: $color-tertiary;
+  stroke-dasharray: calc(1000) calc(1000);
+}
+
+.button-icon--active .progress-ring--circle {
+  stroke: $color-accent-primary;
+}
+
+.button-title {
+  margin-right: 36px;
+  font-family: $font-family-primary;
+  font-size: $font-size-lg;
+  font-weight: 900;
+  line-height: $line-height-lg;
+  color: $color-secondary;
+  cursor: pointer;
+}

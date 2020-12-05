@@ -5,6 +5,7 @@ import React from 'react';
 const Link = ({ to, children, ...props }) => {
   if (to.startsWith('/')) {
     return (
+      // eslint-disable-next-line react/jsx-props-no-spreading
       <GatsbyLink to={to} {...props}>
         {children}
       </GatsbyLink>
@@ -12,6 +13,7 @@ const Link = ({ to, children, ...props }) => {
   }
 
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <a href={to} {...props}>
       {children}
     </a>

@@ -8,8 +8,10 @@ import MainLayout from 'layouts/main';
 const IndexPage = () => (
   <MainLayout>
     <div className="container">
-      Inline SVG: <ExampleInlineSVG />
-      URL SVG: <img src={exampleUrlSvg} alt="" />
+      {'Inline SVG: '}
+      <ExampleInlineSVG />
+      {'URL SVG: '}
+      <img src={exampleUrlSvg} alt="" />
       <Link to="/">Back</Link>
     </div>
   </MainLayout>
