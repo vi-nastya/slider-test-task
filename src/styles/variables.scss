@@ -3,6 +3,9 @@ $color-primary: #0f0449;
 $color-secondary: #fff;
 $color-tertiary: #5c5c8a;
 
+$color-text-primary: #fff;
+$color-text-secondary: #dbdbf0;
+
 $color-accent-primary: #f20d59;
 $color-accent-secondary: #330df2;
 
@@ -11,8 +14,8 @@ $color-accent-primary-hover: '';
 $color-accent-secondary-hover: '';
 
 // Fonts
-$font-family-primary: 'Playfair Display';
-$font-family-secondary: 'Gotham';
+$font-family-primary: 'Playfair Display', 'Times', serif;
+$font-family-secondary: 'Gotham', 'Arial', sans-serif;
 
 $font-size-base: 16px;
 $line-height-base: 21px;
