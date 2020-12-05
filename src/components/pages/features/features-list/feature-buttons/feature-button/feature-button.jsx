@@ -5,7 +5,7 @@ import React from 'react';
 import styles from './feature-button.module.scss';
 
 const cx = classNames.bind(styles);
-const CIRCLE_RADIUS = 38;
+const CIRCLE_RADIUS = 36;
 
 const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, onClick }) => {
   const raf = React.useMemo(

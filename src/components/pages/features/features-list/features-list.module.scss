@@ -1,5 +1,6 @@
 .section {
   width: 100%;
+  min-height: 100vh;
   background: $color-primary;
 }
 
@@ -20,5 +21,5 @@
   align-items: flex-start;
   width: calc(480px + 270px);
   padding: 0 270px 0 0;
-  margin-left: 218px;
+  margin-left: 223px;
 }
