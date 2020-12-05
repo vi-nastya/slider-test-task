@@ -43,7 +43,7 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
 
         const now = performance.now();
 
-        if (now - this.lastAnimated > 1000 / 30) {
+        if (now - this.lastAnimated > 1000 / 60) {
           this.progress = (this.progress + 1) % 100;
 
           if (this.progress === 0) {
@@ -59,6 +59,7 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
         this.rafHandle = requestAnimationFrame(this.loop.bind(this));
       },
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 
@@ -68,6 +69,7 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
     } else {
       raf.stop();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive]);
 
   return (
@@ -99,7 +101,7 @@ const FeatureButton = ({ onProgressComplete, title, icon: Icon, id, isActive, on
 FeatureButton.propTypes = {
   onProgressComplete: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
   isActive: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,

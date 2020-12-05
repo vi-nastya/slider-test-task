@@ -14,6 +14,14 @@
     url('images/pages/features/background/shape-right.svg') no-repeat right 60px;
 }
 
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 400px;
+  padding-top: 106px;
+}
+
 .cards-container {
   position: relative;
   display: flex;
